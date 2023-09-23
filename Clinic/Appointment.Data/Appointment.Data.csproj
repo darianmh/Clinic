@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Appointment.Contract\Appointment.Contract.csproj" />
+    <ProjectReference Include="..\Appointment.Frameworks.EfCore\Appointment.Frameworks.EfCore.csproj" />
+  </ItemGroup>
+
 </Project>

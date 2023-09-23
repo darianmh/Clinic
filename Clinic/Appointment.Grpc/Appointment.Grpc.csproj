@@ -7,11 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+    <None Remove="Protos\Appointment.proto" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Appointment.Contract\Appointment.Contract.csproj" />
+    <ProjectReference Include="..\Appointment.Data\Appointment.Data.csproj" />
+    <ProjectReference Include="..\Appointment.Frameworks.EfCore\Appointment.Frameworks.EfCore.csproj" />
+    <ProjectReference Include="..\Appointment.Services\Appointment.Services.csproj" />
+    <ProjectReference Include="..\Appointment.UseCases\Appointment.UseCases.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\Appointment.proto" GrpcServices="Server" />
   </ItemGroup>
 
 </Project>

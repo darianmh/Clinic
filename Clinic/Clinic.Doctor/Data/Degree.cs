@@ -18,4 +18,8 @@ public class Degree
     /// حداکثر زمان ویزیت
     /// </summary>
     public int VisitMaxTime { get; set; }
+    /// <summary>
+    /// ماکزیمم تعداد همپوشانی قرار ملاقات ها
+    /// </summary>
+    public int MaxOverlap { get; set; }
 }

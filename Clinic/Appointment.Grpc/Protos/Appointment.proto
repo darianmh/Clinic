@@ -1,0 +1,35 @@
+﻿syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+option csharp_namespace = "Appointment.Grpc.Protos";
+
+
+service AppointmentService {
+	//تنظیم قرار در تایم مشخص در صورت امکان
+	//فیلد IsOk صحت انجام کار را مشخص می کند
+	rpc SetAppointment (SetAppointmentRequest) returns (SetAppointmentResponse) {}
+	//تنظیم قرار در اولین وقت موجود
+	//فیلد IsOk صحت انجام کار را مشخص می کند
+	rpc SetEarliestAppointment (SetEarliestAppointmentRequest) returns (SetAppointmentResponse) {}
+}
+
+
+message SetAppointmentRequest {
+	int32 DoctorId = 1;
+	int32 PatientId = 2;
+	google.protobuf.Timestamp StartDateTime = 3;
+	int32 DurationMinutes = 4;
+}
+
+message SetEarliestAppointmentRequest {
+	int32 DoctorId = 1;
+	int32 PatientId = 2;
+	int32 DurationMinutes = 3;
+}
+
+message SetAppointmentResponse {
+	bool IsOk = 1;
+	google.protobuf.Int32Value AppointmentId = 2;
+	google.protobuf.Timestamp StartDateTime = 3;
+}

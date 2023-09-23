@@ -1,4 +1,4 @@
-﻿namespace Appointment.Domain;
+﻿namespace Appointment.Domain.DoctorAggregate;
 
 /// <summary>
 /// زمان بندی هفتگی حضور دکتر در درمانگاه
